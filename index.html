@@ -50,6 +50,7 @@
             margin-bottom: 40px;
             position: sticky;
             top: 20px;
+            z-index: 100;
         }
         .nav a {
             color: white;
@@ -70,6 +71,12 @@
         .critical-box {
             background-color: #fff0f0;
             border-left: 4px solid #d82c0d;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .info-box {
+            background-color: #eef6ff;
+            border-left: 4px solid #2c6ecb;
             padding: 20px;
             margin: 20px 0;
         }
@@ -94,6 +101,9 @@
         th {
             background-color: #f6f6f7;
         }
+        a {
+            color: #2c6ecb;
+        }
     </style>
 </head>
 <body>
@@ -106,152 +116,444 @@
 
     <div class="container">
 
+        <!-- TERMS OF SERVICE -->
+
         <div id="terms">
             <h1>Terms of Service</h1>
-            <p><strong>Effective Date:</strong> January 29, 2026</p>
+            <p><strong>Effective Date:</strong> January 29, 2026<br>
+            <strong>Last Updated:</strong> February 24, 2026</p>
 
             <h2>1. Agreement to Terms</h2>
-            <p>By installing or using Customer Income Score ("the App"), you agree to these Terms of Service. The App is operated by <strong>Customer Income Insights LLC</strong>.</p>
+            <p>By installing, accessing, or using Customer Income Score ("the App"), you ("Merchant," "you") agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, do not install or use the App. The App is owned and operated by <strong>Customer Income Insights LLC</strong> ("Company," "we," "us").</p>
 
             <h2>2. Service Description</h2>
-            <p>The App provides AI-powered income estimation for your Shopify customers based on their addresses. We use advanced real estate valuation logic to estimate home values or rental rates and derive likely household income ranges, generating wealth scores and segments for marketing purposes.</p>
+            <p>Customer Income Score is a Shopify application that provides AI-powered household wealth estimation for your customers based on their shipping addresses. The App:</p>
+            <ul>
+                <li>Analyzes customer shipping addresses using Google Gemini AI to estimate property values, neighborhood demographics, and likely household income ranges.</li>
+                <li>Assigns each customer a wealth score on a 1&ndash;10 scale and a segment label (Budget, Middle, Upper-Middle, or Affluent).</li>
+                <li>Automatically tags customers in your Shopify store with their segment and score for use in marketing tools.</li>
+                <li>Provides a dashboard with aggregate statistics, score distributions, and marketing guidance.</li>
+            </ul>
+            <p>All estimates are approximations derived from publicly available geographic and property data. They are not verified financial data and should be treated as directional marketing insights only.</p>
 
-            <h2>3. Data Usage & Compliance</h2>
+            <h2>3. Eligibility</h2>
+            <p>You must have an active Shopify store and be authorized to install applications on that store. You must be at least 18 years old or the age of majority in your jurisdiction. By installing the App, you represent that you have the authority to bind the business entity that owns the Shopify store to these Terms.</p>
+
+            <h2>4. Account and Access</h2>
+            <p>The App authenticates via Shopify OAuth. You are responsible for maintaining the security of your Shopify account. We are not responsible for any unauthorized access to the App resulting from compromised Shopify credentials. We store your Shopify access token solely to operate the App on your behalf.</p>
+
+            <h2>5. Data Usage and Compliance</h2>
             <div class="highlight-box">
-                <h3>3.1 What We Collect</h3>
+                <h3>5.1 What We Collect</h3>
                 <ul>
-                    <li>Customer shipping addresses (processed transiently)</li>
-                    <li>Customer IDs</li>
-                    <li>Shop authentication tokens</li>
+                    <li>Customer shipping addresses (street, city, state, zip code, country)</li>
+                    <li>Customer IDs and email addresses (for identification and tagging)</li>
+                    <li>Shop domain and OAuth access tokens (for Shopify API access)</li>
                 </ul>
 
-                <h3>3.2 How We Use Data (Inference Only)</h3>
+                <h3>5.2 What We Generate and Store</h3>
                 <ul>
-                    <li>Addresses are sent to Google Gemini AI for analysis.</li>
-                    <li>We generate income estimates and wealth scores.</li>
-                    <li><strong>WE DO NOT USE YOUR DATA TO TRAIN AI MODELS.</strong></li>
-                    <li><strong>WE DO NOT AGGREGATE DATA ACROSS MERCHANTS.</strong></li>
+                    <li>Estimated income range (min/max)</li>
+                    <li>Wealth score (1&ndash;10)</li>
+                    <li>Segment classification (Budget, Middle, Upper-Middle, Affluent)</li>
+                    <li>Confidence level and reasoning summary</li>
+                    <li>Estimated home value range</li>
+                </ul>
+
+                <h3>5.3 What We Do NOT Do</h3>
+                <ul>
+                    <li><strong>We do NOT use your data to train AI models.</strong> Customer data is used for inference only.</li>
+                    <li><strong>We do NOT sell, rent, or share customer data</strong> with third parties for their own purposes.</li>
+                    <li><strong>We do NOT aggregate data across merchants.</strong> Each merchant's data is isolated.</li>
+                    <li><strong>We do NOT access personal financial records</strong> such as bank accounts, tax returns, or credit reports.</li>
                 </ul>
             </div>
 
-            <h2>4. Permitted & Prohibited Uses</h2>
-            <p><strong>✅ Permitted Uses:</strong> Marketing segmentation, product recommendations, campaign targeting, customer analytics.</p>
-            
+            <h2>6. Permitted and Prohibited Uses</h2>
+            <p><strong>Permitted Uses:</strong></p>
+            <ul>
+                <li>Marketing segmentation and campaign targeting</li>
+                <li>Product recommendations and personalization</li>
+                <li>Customer analytics and business intelligence</li>
+                <li>Ad spend allocation and audience optimization</li>
+                <li>Pricing strategy research</li>
+            </ul>
+
             <div class="critical-box">
-                <h3>❌ Prohibited Uses</h3>
-                <p>You strictly agree <strong>NOT</strong> to use this data for:</p>
+                <h3>Prohibited Uses</h3>
+                <p>You strictly agree <strong>NOT</strong> to use data generated by this App for:</p>
                 <ul>
-                    <li>Credit decisions or scoring</li>
-                    <li>Employment screening or hiring decisions</li>
-                    <li>Housing determinations or tenant screening</li>
+                    <li>Credit decisions, lending, or credit scoring of any kind</li>
+                    <li>Employment screening, hiring, or termination decisions</li>
+                    <li>Housing determinations, tenant screening, or rental decisions</li>
+                    <li>Insurance underwriting or eligibility decisions</li>
                     <li>Any purpose regulated by the Fair Credit Reporting Act (FCRA)</li>
-                    <li>Discriminatory practices</li>
+                    <li>Any purpose regulated by the Equal Credit Opportunity Act (ECOA)</li>
+                    <li>Discriminatory practices of any kind, including but not limited to discrimination based on race, ethnicity, religion, national origin, gender, age, disability, or any protected class</li>
+                    <li>Government surveillance or law enforcement purposes</li>
+                    <li>Any decision that produces legal effects or similarly significant effects on individuals</li>
                 </ul>
-                <p><strong>CRITICAL:</strong> Estimates are for marketing purposes only. They are not verified facts.</p>
+                <p><strong>IMPORTANT:</strong> Customer Income Score is NOT a consumer reporting agency, and its outputs are NOT consumer reports as defined by the FCRA. All estimates are for marketing segmentation purposes only. They are AI-generated approximations, not verified facts about any individual.</p>
             </div>
 
-            <h2>5. Disclaimer of Warranties</h2>
-            <p>THE APP IS PROVIDED "AS IS" WITHOUT WARRANTIES OF ANY KIND. Income estimates are approximations based on real estate data logic and AI analysis. They may be inaccurate. We do not guarantee the correctness of any specific estimate.</p>
+            <h2>7. Billing and Payment</h2>
+            <p>The App offers two pricing plans, billed through Shopify's billing system:</p>
+            <ul>
+                <li><strong>Pay As You Go:</strong> Free to install. Per-enrichment charges apply starting at $0.15 per customer scored, with volume discounts. 10 free enrichments are included upon installation.</li>
+                <li><strong>Pro Plan:</strong> $10/month subscription plus $0.06 per auto-enriched customer. Includes automatic scoring of new customers as they arrive.</li>
+            </ul>
+            <p>All charges are processed through Shopify's billing system and appear on your regular Shopify invoice. Failed or skipped enrichments (e.g., customers without valid addresses) are not charged. Refunds follow Shopify's standard billing policies.</p>
 
-            <h2>6. Limitation of Liability</h2>
-            <p>TO THE MAXIMUM EXTENT PERMITTED BY LAW, CUSTOMER INCOME INSIGHTS LLC SHALL NOT BE LIABLE FOR INDIRECT, INCIDENTAL, OR CONSEQUENTIAL DAMAGES. OUR TOTAL LIABILITY SHALL NOT EXCEED THE AMOUNT YOU PAID IN THE LAST 12 MONTHS OR $100, WHICHEVER IS GREATER.</p>
+            <h2>8. Intellectual Property</h2>
+            <p>All rights, title, and interest in the App, including its software, algorithms, design, and documentation, are owned by Customer Income Insights LLC. You are granted a limited, non-exclusive, non-transferable license to use the App solely for its intended purpose while your subscription is active. The wealth scores and segment data generated for your customers are your data to use within the permitted use restrictions above.</p>
 
-            <h2>7. Contact</h2>
+            <h2>9. Availability and Support</h2>
+            <p>We strive to maintain high availability but do not guarantee uninterrupted service. The App depends on third-party services (Shopify, Google AI, Railway) that may experience their own outages. We will make reasonable efforts to address issues promptly. For support inquiries, contact us at the email address listed below.</p>
+
+            <h2>10. Disclaimer of Warranties</h2>
+            <p>THE APP IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, WHETHER EXPRESS, IMPLIED, OR STATUTORY, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. Income and wealth estimates are approximations based on publicly available geographic and property data processed by AI. They may be inaccurate, incomplete, or outdated. We do not warrant or guarantee the accuracy, completeness, or reliability of any specific estimate. You acknowledge that individual results may vary significantly from actual household income.</p>
+
+            <h2>11. Limitation of Liability</h2>
+            <p>TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, CUSTOMER INCOME INSIGHTS LLC, ITS OFFICERS, DIRECTORS, EMPLOYEES, AND AGENTS SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING BUT NOT LIMITED TO LOSS OF PROFITS, DATA, BUSINESS OPPORTUNITIES, OR GOODWILL, ARISING OUT OF OR IN CONNECTION WITH YOUR USE OF THE APP, REGARDLESS OF THE CAUSE OF ACTION OR THE THEORY OF LIABILITY.</p>
+            <p>OUR TOTAL AGGREGATE LIABILITY FOR ALL CLAIMS ARISING OUT OF OR RELATING TO THESE TERMS OR THE APP SHALL NOT EXCEED THE GREATER OF (A) THE AMOUNTS YOU PAID TO US IN THE 12 MONTHS PRECEDING THE CLAIM, OR (B) ONE HUNDRED DOLLARS ($100).</p>
+
+            <h2>12. Indemnification</h2>
+            <p>You agree to indemnify, defend, and hold harmless Customer Income Insights LLC from and against any claims, damages, losses, liabilities, costs, and expenses (including reasonable attorneys' fees) arising from: (a) your use of the App; (b) your violation of these Terms; (c) your use of generated data in a manner inconsistent with Section 6; or (d) any claim by a third party related to your use of the App's outputs.</p>
+
+            <h2>13. Termination</h2>
+            <p>You may uninstall the App at any time through your Shopify admin. We may suspend or terminate your access if you violate these Terms, engage in prohibited uses, or if required by law. Upon termination, your access to the App ceases immediately, and your stored data will be deleted within 30 days in accordance with our Privacy Policy and Shopify's data protection requirements.</p>
+
+            <h2>14. Modifications to Terms</h2>
+            <p>We may update these Terms from time to time. Material changes will be communicated via the App dashboard or email. Continued use of the App after changes constitutes acceptance. If you do not agree with updated Terms, you should uninstall the App.</p>
+
+            <h2>15. Governing Law and Disputes</h2>
+            <p>These Terms are governed by the laws of the State of Delaware, United States, without regard to conflict of law principles. Any disputes arising under these Terms shall be resolved in the state or federal courts located in Delaware. You waive any objection to jurisdiction or venue in such courts.</p>
+
+            <h2>16. Severability</h2>
+            <p>If any provision of these Terms is found to be unenforceable or invalid, that provision shall be limited or eliminated to the minimum extent necessary, and the remaining provisions shall remain in full force and effect.</p>
+
+            <h2>17. Entire Agreement</h2>
+            <p>These Terms, together with the Privacy Policy and Data Processing Agreement, constitute the entire agreement between you and Customer Income Insights LLC regarding your use of the App, and supersede all prior agreements and understandings.</p>
+
+            <h2>18. Contact</h2>
             <p><strong>Customer Income Insights LLC</strong><br>
-            Email: <a href="/cdn-cgi/l/email-protection#55362026213a3830273c3b363a38303c3b263c323d2126153238343c397b363a38"><span class="__cf_email__" data-cfemail="fa998f898e95979f8893949995979f939489939d928e89ba9d979b9396d4999597">[email&#160;protected]</span></a></p>
+            Email: <a href="mailto:customerincomeinsights@gmail.com">customerincomeinsights@gmail.com</a></p>
         </div>
 
         <hr style="border: 0; border-top: 2px solid #eee; margin: 60px 0;">
+
+        <!-- PRIVACY POLICY -->
 
         <div id="privacy">
             <h1>Privacy Policy</h1>
-            <p><strong>Effective Date:</strong> January 29, 2026</p>
+            <p><strong>Effective Date:</strong> January 29, 2026<br>
+            <strong>Last Updated:</strong> February 24, 2026</p>
 
             <h2>1. Introduction</h2>
-            <p>Customer Income Insights LLC ("we," "us") respects your privacy. This policy explains how we handle data when you use the Customer Income Score app.</p>
+            <p>Customer Income Insights LLC ("we," "us," "our") respects your privacy and the privacy of your customers. This Privacy Policy explains how we collect, use, store, and protect data when you use the Customer Income Score app ("the App"). This policy applies to merchants who install the App and to end-user customers whose data is processed through the App.</p>
 
             <h2>2. Information We Collect</h2>
-            <h3>2.1 From Merchants</h3>
+
+            <h3>2.1 Merchant Information</h3>
             <ul>
-                <li>Shop domain and email</li>
-                <li>OAuth access tokens (to sync with Shopify)</li>
+                <li><strong>Shop domain</strong> &mdash; Your myshopify.com domain, used to identify your store.</li>
+                <li><strong>OAuth access token</strong> &mdash; Issued by Shopify during installation, used to access your store's customer data and billing APIs. Stored securely and encrypted at rest.</li>
+                <li><strong>Billing records</strong> &mdash; Charge IDs and subscription status for payment processing through Shopify.</li>
             </ul>
-            <h3>2.2 From Your Customers</h3>
+
+            <h3>2.2 Customer Information (processed on behalf of Merchants)</h3>
             <ul>
-                <li>Shipping addresses (Street, City, State, Zip)</li>
-                <li>Customer IDs</li>
+                <li><strong>Customer IDs</strong> &mdash; Shopify numeric customer identifiers.</li>
+                <li><strong>Email addresses</strong> &mdash; Used for display in the App dashboard only.</li>
+                <li><strong>Shipping addresses</strong> &mdash; Street address, city, state/province, zip/postal code, and country. This is the primary input for wealth estimation.</li>
+                <li><strong>Customer tags</strong> &mdash; Existing Shopify tags (read to avoid overwriting), and new tags written by the App (e.g., "affluent", "wealth-7").</li>
+            </ul>
+
+            <h3>2.3 Information We Generate</h3>
+            <ul>
+                <li>Estimated household income range</li>
+                <li>Wealth score (1&ndash;10)</li>
+                <li>Segment classification (Budget, Middle, Upper-Middle, Affluent)</li>
+                <li>Confidence level and AI reasoning summary</li>
+                <li>Estimated home value range</li>
+            </ul>
+
+            <h3>2.4 Information We Do NOT Collect</h3>
+            <ul>
+                <li>Payment card numbers or financial account information</li>
+                <li>Social Security numbers or government-issued IDs</li>
+                <li>Order history, purchase amounts, or transaction data</li>
+                <li>Browsing behavior, cookies, or tracking pixels</li>
+                <li>Actual income, tax returns, or credit reports</li>
             </ul>
 
             <h2>3. How We Use Information</h2>
-            <p>We use customer data solely to provide the income estimation service. Specifically:</p>
-            <ul>
-                <li><strong>AI Analysis:</strong> Addresses are sent to Google Gemini AI to estimate property value and household income.</li>
-                <li><strong>Tagging:</strong> We apply wealth segment tags to your Shopify customers.</li>
-                <li><strong>Dashboard:</strong> We display aggregated wealth statistics.</li>
-            </ul>
-            <p class="highlight-box"><strong>We do NOT sell customer data. We do NOT use customer data to train AI models.</strong></p>
+            <p>We use collected information solely to provide and improve the income estimation service:</p>
+            <table>
+                <tr>
+                    <th>Purpose</th>
+                    <th>Data Used</th>
+                    <th>Legal Basis</th>
+                </tr>
+                <tr>
+                    <td>AI-powered wealth estimation</td>
+                    <td>Customer shipping addresses</td>
+                    <td>Legitimate interest / Contract performance</td>
+                </tr>
+                <tr>
+                    <td>Customer tagging in Shopify</td>
+                    <td>Customer IDs, generated scores</td>
+                    <td>Contract performance</td>
+                </tr>
+                <tr>
+                    <td>Dashboard display</td>
+                    <td>Aggregated scores, emails, addresses (city/state only)</td>
+                    <td>Contract performance</td>
+                </tr>
+                <tr>
+                    <td>Billing and subscription management</td>
+                    <td>Shop domain, charge records</td>
+                    <td>Contract performance</td>
+                </tr>
+                <tr>
+                    <td>Service reliability and debugging</td>
+                    <td>Error logs (no customer PII in logs)</td>
+                    <td>Legitimate interest</td>
+                </tr>
+            </table>
+
+            <div class="info-box">
+                <p><strong>We do NOT sell, rent, or share customer data</strong> with any third party for their own marketing or commercial purposes.</p>
+                <p><strong>We do NOT use customer data to train AI models.</strong> Data sent to Google Gemini AI is used for inference only and is subject to Google's API data usage policies, which prohibit training on API inputs.</p>
+                <p><strong>We do NOT aggregate data across merchants.</strong> Each merchant's data is fully isolated.</p>
+            </div>
 
             <h2>4. Information Sharing</h2>
+            <p>We share data only with the following service providers, strictly for the purpose of operating the App:</p>
+            <table>
+                <tr>
+                    <th>Provider</th>
+                    <th>Purpose</th>
+                    <th>Data Shared</th>
+                    <th>Location</th>
+                </tr>
+                <tr>
+                    <td>Google LLC (Gemini AI)</td>
+                    <td>Address analysis and wealth estimation</td>
+                    <td>Customer shipping addresses (inference only, not used for model training)</td>
+                    <td>USA</td>
+                </tr>
+                <tr>
+                    <td>Railway Corp</td>
+                    <td>Application and database hosting</td>
+                    <td>All stored data (encrypted at rest)</td>
+                    <td>USA</td>
+                </tr>
+                <tr>
+                    <td>Shopify Inc.</td>
+                    <td>Platform integration, billing, and webhooks</td>
+                    <td>OAuth tokens, customer tags, billing records</td>
+                    <td>Canada / USA</td>
+                </tr>
+            </table>
+            <p>We do not share data with any other third parties. We will disclose information if required by law, regulation, or valid legal process (e.g., subpoena or court order).</p>
+
+            <h2>5. Data Security</h2>
+            <p>We implement appropriate technical and organizational measures to protect your data:</p>
             <ul>
-                <li><strong>Google:</strong> For AI processing (inference only, data not used for training).</li>
-                <li><strong>Railway:</strong> For secure database hosting.</li>
-                <li><strong>Shopify:</strong> For platform integration and billing.</li>
+                <li><strong>Encryption in transit:</strong> All data is transmitted over HTTPS/TLS.</li>
+                <li><strong>Encryption at rest:</strong> Database storage is encrypted.</li>
+                <li><strong>Access controls:</strong> Access tokens and credentials are stored securely with restricted access.</li>
+                <li><strong>Webhook verification:</strong> All incoming Shopify webhooks are verified via HMAC-SHA256 signatures.</li>
+                <li><strong>Data isolation:</strong> Each merchant's data is logically isolated in our database.</li>
+                <li><strong>Minimal data collection:</strong> We only collect and retain data necessary to provide the service.</li>
+            </ul>
+            <p>While we take reasonable precautions, no method of electronic transmission or storage is 100% secure. We cannot guarantee absolute security.</p>
+
+            <h2>6. Data Retention and Deletion</h2>
+            <ul>
+                <li><strong>Active use:</strong> Data is retained while the App is installed and your account is active.</li>
+                <li><strong>Uninstallation:</strong> When you uninstall the App, we receive Shopify's <code>app/uninstalled</code> webhook and initiate data deletion. All merchant data, enrichment records, and job history are deleted within 30 days.</li>
+                <li><strong>Manual deletion:</strong> You may request deletion of all your data at any time by emailing us. We will process your request within 30 days.</li>
+                <li><strong>Shopify GDPR webhooks:</strong> We respond to Shopify's mandatory compliance webhooks for customer data requests, customer data erasure, and shop data erasure.</li>
+                <li><strong>Billing records:</strong> Anonymized billing records may be retained as required for tax and accounting purposes.</li>
             </ul>
 
-            <h2>5. Data Retention & Deletion</h2>
-            <p>We retain data only while your subscription is active. Upon uninstallation, all data is deleted within 30 days. You may manually request deletion of all data at any time via the app dashboard or by emailing us.</p>
+            <h2>7. Your Rights</h2>
 
-            <h2>6. Contact Us</h2>
-            <p>If you have questions about privacy, contact:<br>
+            <h3>7.1 All Users</h3>
+            <p>You have the right to:</p>
+            <ul>
+                <li><strong>Access</strong> the data we store about your customers (visible in the App dashboard).</li>
+                <li><strong>Request deletion</strong> of all data by contacting us.</li>
+                <li><strong>Uninstall</strong> the App at any time, triggering automatic data deletion.</li>
+            </ul>
+
+            <h3>7.2 GDPR (European Economic Area, UK, and Switzerland)</h3>
+            <p>If you or your customers are located in the EEA, UK, or Switzerland, the following additional rights apply under the General Data Protection Regulation (GDPR):</p>
+            <ul>
+                <li><strong>Right of access:</strong> Request a copy of personal data we process.</li>
+                <li><strong>Right to rectification:</strong> Request correction of inaccurate data.</li>
+                <li><strong>Right to erasure:</strong> Request deletion of personal data ("right to be forgotten").</li>
+                <li><strong>Right to restrict processing:</strong> Request that we limit how we use your data.</li>
+                <li><strong>Right to data portability:</strong> Request your data in a structured, machine-readable format.</li>
+                <li><strong>Right to object:</strong> Object to processing based on legitimate interests.</li>
+                <li><strong>Right to lodge a complaint:</strong> File a complaint with your local data protection authority.</li>
+            </ul>
+            <p>To exercise any of these rights, contact us at the email below. We will respond within 30 days.</p>
+
+            <h3>7.3 CCPA (California, USA)</h3>
+            <p>If you are a California resident, you have the following rights under the California Consumer Privacy Act (CCPA):</p>
+            <ul>
+                <li><strong>Right to know:</strong> Request what personal information we collect, use, and disclose.</li>
+                <li><strong>Right to delete:</strong> Request deletion of your personal information.</li>
+                <li><strong>Right to opt out of sale:</strong> We do NOT sell personal information, so this right is automatically satisfied.</li>
+                <li><strong>Right to non-discrimination:</strong> We will not discriminate against you for exercising your rights.</li>
+            </ul>
+
+            <h2>8. Children's Privacy</h2>
+            <p>The App is designed for use by Shopify merchants operating businesses. We do not knowingly collect personal information from children under 13 (or the applicable age in your jurisdiction). If you believe we have inadvertently collected such data, please contact us immediately.</p>
+
+            <h2>9. International Data Transfers</h2>
+            <p>Our services are hosted in the United States. If you are located outside the United States, your data will be transferred to and processed in the United States. By using the App, you consent to this transfer. For EEA/UK users, such transfers are governed by the Data Processing Agreement below.</p>
+
+            <h2>10. Changes to This Policy</h2>
+            <p>We may update this Privacy Policy from time to time. Material changes will be communicated via the App dashboard or email. The "Last Updated" date at the top reflects the most recent revision. Continued use of the App after changes constitutes acceptance.</p>
+
+            <h2>11. Contact Us</h2>
+            <p>If you have questions about this Privacy Policy or wish to exercise your data rights, contact:<br>
             <strong>Customer Income Insights LLC</strong><br>
-            Email: <a href="/cdn-cgi/l/email-protection#53302620273c3e36213a3d303c3e363a3d203a343b272013343e323a3f7d303c3e"><span class="__cf_email__" data-cfemail="b0d3c5c3c4dfddd5c2d9ded3dfddd5d9dec3d9d7d8c4c3f0d7ddd1d9dc9ed3dfdd">[email&#160;protected]</span></a></p>
+            Email: <a href="mailto:customerincomeinsights@gmail.com">customerincomeinsights@gmail.com</a></p>
         </div>
 
         <hr style="border: 0; border-top: 2px solid #eee; margin: 60px 0;">
 
+        <!-- DATA PROCESSING AGREEMENT -->
+
         <div id="dpa">
             <h1>Data Processing Agreement (DPA)</h1>
-            <p><strong>Effective Date:</strong> January 29, 2026</p>
-            <p>This Data Processing Agreement ("DPA") governs the processing of Personal Data by <strong>Customer Income Insights LLC</strong> ("Processor") on behalf of the Merchant ("Controller").</p>
+            <p><strong>Effective Date:</strong> January 29, 2026<br>
+            <strong>Last Updated:</strong> February 24, 2026</p>
+            <p>This Data Processing Agreement ("DPA") governs the processing of Personal Data by <strong>Customer Income Insights LLC</strong> ("Processor," "we") on behalf of the Merchant ("Controller," "you") in connection with the Customer Income Score application. This DPA is incorporated into and forms part of the Terms of Service.</p>
 
-            <h2>1. Scope and Purpose</h2>
-            <p>We process Personal Data (customer addresses) solely for the purpose of providing income estimation services as described in the Terms of Service.</p>
+            <h2>1. Definitions</h2>
+            <ul>
+                <li><strong>"Personal Data"</strong> means any information relating to an identified or identifiable natural person processed through the App, including customer names, email addresses, shipping addresses, and derived wealth scores.</li>
+                <li><strong>"Processing"</strong> means any operation performed on Personal Data, including collection, storage, analysis, modification, retrieval, and deletion.</li>
+                <li><strong>"Data Protection Laws"</strong> means all applicable data protection and privacy laws, including the GDPR (EU) 2016/679, the UK GDPR, the CCPA (California Civil Code 1798.100 et seq.), and any amendments thereto.</li>
+                <li><strong>"Sub-processor"</strong> means any third party engaged by us to process Personal Data on your behalf.</li>
+            </ul>
 
-            <h2>2. Sub-processors</h2>
-            <p>You authorize the following sub-processors:</p>
+            <h2>2. Scope and Purpose</h2>
+            <p>We process Personal Data solely for the purpose of providing the Customer Income Score service as described in the Terms of Service. Specifically:</p>
+            <ul>
+                <li>Receiving customer shipping addresses from your Shopify store.</li>
+                <li>Sending addresses to Google Gemini AI for wealth estimation (inference only).</li>
+                <li>Storing generated wealth scores, segments, and related estimates in our database.</li>
+                <li>Writing customer tags back to your Shopify store.</li>
+                <li>Displaying results in the App dashboard.</li>
+            </ul>
+            <p>We will not process Personal Data for any purpose other than providing the service, unless required by applicable law.</p>
+
+            <h2>3. Controller and Processor Roles</h2>
+            <p>For the purposes of Data Protection Laws:</p>
+            <ul>
+                <li><strong>You (the Merchant)</strong> are the Controller of your customers' Personal Data. You determine the purposes and means of processing.</li>
+                <li><strong>We (Customer Income Insights LLC)</strong> are the Processor, processing Personal Data on your behalf and in accordance with your instructions as expressed through your use of the App.</li>
+            </ul>
+
+            <h2>4. Obligations of the Processor</h2>
+            <p>We shall:</p>
+            <ul>
+                <li>Process Personal Data only on your documented instructions (i.e., as necessary to provide the App's functionality).</li>
+                <li>Ensure that persons authorized to process Personal Data have committed themselves to confidentiality.</li>
+                <li>Implement appropriate technical and organizational measures to ensure a level of security appropriate to the risk (see Section 6).</li>
+                <li>Assist you in responding to data subject access requests and other rights requests.</li>
+                <li>Assist you in ensuring compliance with obligations regarding data breach notification.</li>
+                <li>Delete or return all Personal Data upon termination of the service, at your choice.</li>
+                <li>Make available to you all information necessary to demonstrate compliance with this DPA.</li>
+            </ul>
+
+            <h2>5. Sub-processors</h2>
+            <p>You authorize the use of the following sub-processors:</p>
             <table>
                 <tr>
                     <th>Sub-processor</th>
-                    <th>Service</th>
+                    <th>Service Provided</th>
+                    <th>Data Processed</th>
                     <th>Location</th>
                 </tr>
                 <tr>
                     <td>Google LLC</td>
                     <td>AI Analysis (Gemini API)</td>
+                    <td>Customer shipping addresses (inference only)</td>
                     <td>USA</td>
                 </tr>
                 <tr>
                     <td>Railway Corp</td>
-                    <td>Database Hosting</td>
+                    <td>Application and Database Hosting</td>
+                    <td>All stored data (encrypted at rest)</td>
                     <td>USA</td>
                 </tr>
                 <tr>
                     <td>Shopify Inc.</td>
-                    <td>Platform & Billing</td>
-                    <td>Canada/USA</td>
+                    <td>Platform Integration and Billing</td>
+                    <td>OAuth tokens, customer tags, billing records</td>
+                    <td>Canada / USA</td>
                 </tr>
             </table>
+            <p>We will notify you before adding or replacing any sub-processor. If you object to a new sub-processor, you may terminate the service by uninstalling the App. We ensure that each sub-processor is bound by data protection obligations no less protective than those in this DPA.</p>
 
-            <h2>3. Security Measures</h2>
-            <p>We implement appropriate technical measures, including:</p>
+            <h2>6. Security Measures</h2>
+            <p>We implement appropriate technical and organizational measures, including:</p>
             <ul>
-                <li>Encryption in transit (HTTPS/TLS)</li>
-                <li>Encryption at rest (Database encryption)</li>
-                <li>Strict access controls for support staff</li>
+                <li><strong>Encryption in transit:</strong> All communications use HTTPS/TLS 1.2+.</li>
+                <li><strong>Encryption at rest:</strong> Database storage is encrypted using industry-standard encryption.</li>
+                <li><strong>Access controls:</strong> Strict role-based access; API tokens and secrets stored securely.</li>
+                <li><strong>Webhook integrity:</strong> All Shopify webhooks verified via HMAC-SHA256 signature validation.</li>
+                <li><strong>Data isolation:</strong> Merchant data is logically isolated; no cross-merchant data access.</li>
+                <li><strong>Incident response:</strong> Procedures for identifying, reporting, and remediating security incidents.</li>
+                <li><strong>Regular updates:</strong> Dependencies and infrastructure kept up to date with security patches.</li>
             </ul>
 
-            <h2>4. Data Subject Rights</h2>
-            <p>We will assist you in responding to requests from your customers (e.g., deletions, access requests) regarding their data processed by our App.</p>
+            <h2>7. Data Subject Rights</h2>
+            <p>We will assist you in fulfilling your obligations to respond to requests from data subjects exercising their rights under Data Protection Laws, including rights of access, rectification, erasure, restriction, portability, and objection. We respond to Shopify's mandatory GDPR webhooks (customer data request, customer data erasure, and shop data erasure) to facilitate these rights programmatically.</p>
 
-            <h2>5. Contact</h2>
-            <p><strong>
+            <h2>8. Data Breach Notification</h2>
+            <p>In the event of a Personal Data breach, we will:</p>
+            <ul>
+                <li>Notify you without undue delay, and in any event within 72 hours of becoming aware of the breach.</li>
+                <li>Provide sufficient information to enable you to meet any obligations to report or inform data subjects of the breach.</li>
+                <li>Cooperate with you and take reasonable steps to assist in the investigation, mitigation, and remediation of each breach.</li>
+            </ul>
+
+            <h2>9. International Transfers</h2>
+            <p>Personal Data is transferred to and processed in the United States. For transfers from the EEA/UK, we rely on:</p>
+            <ul>
+                <li>Standard Contractual Clauses (SCCs) as adopted by the European Commission, which are incorporated into this DPA by reference.</li>
+                <li>The data importer's commitment to implement supplementary measures where necessary.</li>
+            </ul>
+
+            <h2>10. Duration and Termination</h2>
+            <p>This DPA remains in effect for as long as we process Personal Data on your behalf. Upon termination of the service (e.g., App uninstallation), we will delete all Personal Data within 30 days, unless retention is required by applicable law. You may request confirmation of deletion.</p>
+
+            <h2>11. Liability</h2>
+            <p>The liability of each party under this DPA is subject to the limitations of liability set forth in the Terms of Service.</p>
+
+            <h2>12. Contact</h2>
+            <p><strong>Customer Income Insights LLC</strong><br>
+            Data Protection Contact<br>
+            Email: <a href="mailto:customerincomeinsights@gmail.com">customerincomeinsights@gmail.com</a></p>
+        </div>
+
+        <!-- FOOTER -->
+
+        <div class="footer">
+            <p>&copy; 2026 Customer Income Insights LLC. All rights reserved.</p>
+            <p>Questions? Contact us at <a href="mailto:customerincomeinsights@gmail.com">customerincomeinsights@gmail.com</a></p>
+        </div>
+
+    </div>
+
+</body>
+</html>
